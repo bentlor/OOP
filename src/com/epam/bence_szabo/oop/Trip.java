@@ -50,11 +50,11 @@ public class Trip {
 		
 		Trip t = new Trip(pg, it);
 		System.out.println("Total Discounted Price: " + t.getTotalPrice());
-		System.out.println(p1.getFrequentFlyerProgram().getClass().getName());
-		System.out.println(p2.getFrequentFlyerProgram().getClass().getName());
+		System.out.println(p1.getFrequentFlyerProgram().getClass().getSimpleName());
+		System.out.println(p2.getFrequentFlyerProgram().getClass().getSimpleName());
 		
 		Trip t2 = new Trip(pg, it);
-		System.out.println("Total Discounted Price: " + t2.getTotalPrice());
+		System.out.println("Total Discounted Price for second trip: " + t2.getTotalPrice());
 		
 	}
 

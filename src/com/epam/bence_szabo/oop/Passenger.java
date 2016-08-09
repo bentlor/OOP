@@ -2,7 +2,7 @@ package com.epam.bence_szabo.oop;
 
 public class Passenger {
 
-	private FrequentFlyerProgram ffProgram = new OccasionalFlyer();
+	private FrequentFlyer ffProgram = FrequentFlyer.OCCASIONAL;
 	private int miles;
 	
 
@@ -20,10 +20,8 @@ public class Passenger {
 	}
 	
 	private void promotePassenger() {
-		if (GoldFrequentFlyer.eligible(miles) && !(ffProgram instanceof GoldFrequentFlyer)) {
-			ffProgram = new GoldFrequentFlyer();
-		} else if (miles > 20000 && !(ffProgram instanceof SilverFrequentFlyer)) {
-			ffProgram = new SilverFrequentFlyer();
+		while(ffProgram.hasNext() && ffProgram.next().eligible(miles)) {
+			ffProgram = ffProgram.next();
 		}
 	}
 	
