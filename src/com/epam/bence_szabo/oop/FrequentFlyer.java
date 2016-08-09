@@ -1,5 +1,12 @@
 package com.epam.bence_szabo.oop;
 
-public class FrequentFlyer implements FrequentFlyerProgram {
+public abstract class FrequentFlyer implements FrequentFlyerProgram {
+
+	@Override
+	public abstract double getDiscount();
+
+	public static boolean eligible(int miles) {
+		return false;
+	}
 
 }
